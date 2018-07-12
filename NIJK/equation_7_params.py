@@ -1,2 +1,2 @@
-lilGama = .1
+lilGama = .8
 alpha = 4
