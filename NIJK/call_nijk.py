@@ -1,4 +1,4 @@
-def calNijk(time_series, adj_mat, i , j , k):
+def call_nijk(time_series, adj_mat, parents, i , j , k):
 
 	"""************************************************************************************
 					Check the input types
@@ -35,7 +35,7 @@ def calNijk(time_series, adj_mat, i , j , k):
 	"""************************************************************************************
 					Calculate the Nijk
 	************************************************************************************"""
-	parents = get_parents(i , adj_mat)
+	#parents = get_parents(i , adj_mat)
 	my_val = 0
 	if len(parents) == 0:
 		print("No Parents!")
