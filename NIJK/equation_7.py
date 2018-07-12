@@ -33,8 +33,8 @@ def calEq7(adj_mat, time_series):
 				ni_k += calNijk(time_series, adj_mat, parents, i, j , set([k]))
 				
 			#Calculate the term for k
-			numerator  = sc.gamma(alph_i_k)
-			denominator = sc.gamma(alphs_i_k + ni_k)
+			numerator  = sc.gamma(alpha_i_k)
+			denominator = sc.gamma(alpha_i_k + ni_k)
 			term_2 = (numerator)/(float(denominator))
 			
 			#Multiply term_2 and start the thrid product
