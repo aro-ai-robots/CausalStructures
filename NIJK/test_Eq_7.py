@@ -11,14 +11,17 @@ for index in range(0, len(time_series)):
     temp = time_series[index].tolist()
     time_series[index] = temp        
 time_series = np.array(time_series).T.tolist()
-time_series_short = time_series[:n_length]
-graphs = get_graphs()
-prob_list = []
-for graph in graphs:
-    adj_mat = graph
-    prob_calc = call_eq_7(adj_mat, time_series_short)
-    prob_list.append(prob_calc)
-print(prob_list)
+all_probs = []
+for start in range(0, len(time_series)-start):
+    slider_series = time_series[start: start+n_length]
+    graphs = get_graphs()
+    prob_list = []
+    for graph in graphs:
+        adj_mat = graph
+        prob_calc = call_eq_7(adj_mat, slider_series)
+        prob_list.append(prob_calc)
+    all_probs.append(prob_list)
+print(all_probs)
 
 
 
