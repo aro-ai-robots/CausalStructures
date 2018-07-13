@@ -9,14 +9,14 @@ def call_nijk(time_series, adj_mat, parents, i , j , k):
 		str(type(time_series)) + " (list required)")
 		return None
 	if not type(time_series[0]) == list:
-		print("Insuffecent data passed in time_series to calNijk")
+		print("Insuffecent data passed in time_series to calNijk time_series")
 		return None
 	if not type(adj_mat) == list:
 		print(data_type_error_str + "adj_mat\n" + "Data type given:" +
 		str(type(adj_mat) + " (list required)"))
 		return None
 	if not type(adj_mat[0]) == list:
-		print("Insuffecent data passed in adj_mat to calNijk")
+		print("Insuffecent data passed in adj_mat to calNijk adj_mat")
 		return None	
 	if not type(i) == int:
 		print(data_type_error_str + "i\n"+ "Data type given:" +

@@ -7,7 +7,7 @@ import pandas as pd
 # Returns an array of the same size with values replaced by appropriate bin numbers.
 # Bin ranges are found as ((SERIES_MAX - SERIES_MIN)/ NUMBER_BINS) * BIN_NUMBER + SERIES_MIN
 def binner(series, num_bins, length, start):
-    series = load_data('pydump-percentage-af.data', 2)
+    #series = load_data('pydump-percentage-af.data', 2)
     #print((binned))
     my_return = []
     for sect in series:

@@ -1,14 +1,25 @@
 from call_nijk import *
 from equation_7 import *
-from binner import load_data
+from binner import *
+from get_all_graphs import *
+from equation_7_params import *
 import numpy as np
 
-time_series = load_data('example_time_series.csv', 0)
+series = load_data('ecanruns_2/setting_7/pydump-percentage-af.data', 2)
+time_series = binner(series, 5, 0, 0)
+for index in range(0, len(time_series)):
+    temp = time_series[index].tolist()
+    time_series[index] = temp        
 time_series = np.array(time_series).T.tolist()
-adj_mat = load_data('example_adj_matrix.csv', 0)
-adj_mat = np.array(adj_mat).T.tolist()
+time_series_short = time_series[:n_length]
+graphs = get_graphs()
+prob_list = []
+for graph in graphs:
+    adj_mat = graph
+    prob_calc = call_eq_7(adj_mat, time_series_short)
+    prob_list.append(prob_calc)
+print(prob_list)
 
-print(call_eq_7(adj_mat, time_series))
 
 
 
